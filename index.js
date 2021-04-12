@@ -19,3 +19,12 @@ for(var i = 0; i < prices.length; i++) {
 
 let rounded = Math.round(sum * 10) / 10;
 console.log(rounded);
+
+let student = {
+    name: 'Max',
+    age: 27
+  };
+  for (let key in student) {
+     console.log(student[key]);
+    break;
+  }
