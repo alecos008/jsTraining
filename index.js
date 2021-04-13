@@ -12,7 +12,7 @@ for(var i = 0; i < arr.length; i++) {
 
 const prices = [10.99, 44.56, 112.79, 3, 5];
 let sum = 0; // start value for the sum
-
+    
 for(var i = 0; i < prices.length; i++) {
   sum += prices[i]
 } console.log(sum); 
@@ -28,3 +28,16 @@ let student = {
      console.log(student[key]);
     break;
   }
+
+  let product = {
+    name: 'headphones',
+    price: 100
+  };
+  for(let key in product) {
+  } if (product.price > 100) {
+    product.discount = "10%";
+  } else {
+    product.discount = "7%";
+  } for (let key in product) {
+    product.price = product.price * 0.9;
+  } console.log(product);
