@@ -149,3 +149,4 @@ let student = {
     console.log(`The result is ${multiplied}.`);
   }
   printMultiplied();
+  // first multiplying function 
