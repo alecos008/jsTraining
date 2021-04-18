@@ -128,3 +128,24 @@ let student = {
   };
   console.log(basic.frameworks[0].list[0].name); // => ExpressJS
   console.log(`In Ironhack, I'll learn ${basic.frameworks[0].list[0].name} and ${basic.frameworks[1].list[0].name}.`);  // => In Ironhack, I'll learn ExpressJS and ReactJS.
+
+  function calculateSum(num1, num2){ 
+    return num1 + num2;      
+  }
+                    
+  function printResult(){
+      const result = calculateSum(3,6);
+      console.log(`The result is ${result}.`);
+  }
+  
+  printResult();
+  
+  
+  function multiplyNumbers (a, b) {
+    return a * b;
+  }
+  function printMultiplied () {
+    const multiplied = multiplyNumbers(3,6);
+    console.log(`The result is ${multiplied}.`);
+  }
+  printMultiplied();
