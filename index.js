@@ -188,3 +188,8 @@ let student = {
   }
   
   calculator(6, 20077, "*");
+
+  function welcome(name) { 
+    console.log(`Hello ${name}!`);
+   }
+   welcome("alejandro");
