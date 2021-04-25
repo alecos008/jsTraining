@@ -207,3 +207,22 @@ let student = {
     }
   }
   printNumbers (28559);
+
+  let ironCities = [
+    'Amsterdam',
+    'Barcelona',
+    'Berlin',
+    'Lisbon',
+    'Madrid',
+    'Mexico City',
+    'Miami',         //created array
+    'Paris',
+    'Sao Paulo'
+  ];
+  function printArrayElements (someArr) {
+    someArr.forEach (city => {               // iterate through all array
+      console.log(city);
+    });
+  }
+  printArrayElements (ironCities);   //call function
+
