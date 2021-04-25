@@ -193,3 +193,10 @@ let student = {
     console.log(`Hello ${name}!`);
    }
    welcome("alejandro");
+
+   function printToTwenty () {
+    for (let i = 0; i <= 20; i++) {
+      console.log(i);
+    }
+  }
+  printToTwenty ();
