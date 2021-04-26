@@ -226,3 +226,7 @@ let student = {
   }
   printArrayElements (ironCities);   //call function
 
+  function printEvens (someArr) {
+    
+  }
+
