@@ -230,5 +230,16 @@ let student = {
     }
   }
   printEvens(ironCities);
+
+  const prices = [5, 7.99, 9.99, 0.99, 21];
+
+  function sumAll (arr) {
+    let total = 0;
+    for (let i = 0; i <= arr.lenght; i++) {
+     total = total += arr[i];
+    }
+    console.log(total);
+  }
+  sumAll(prices);
   
 
