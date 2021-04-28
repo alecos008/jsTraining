@@ -224,9 +224,11 @@ let student = {
       console.log(city);
     });
   }
-  printArrayElements (ironCities);   //call function
-
-  function printEvens (someArr) {
-    
+  function printEvens(someArr) {
+    for (i=0; i<someArr.length; i+=2) {
+      console.log(someArr[i]);
+    }
   }
+  printEvens(ironCities);
+  
 
