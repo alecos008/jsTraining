@@ -241,5 +241,14 @@ let student = {
     console.log(total);
   }
   sumAll(prices);
+
+let arr = [1,"alejandro", 5, true];
+
+function printType (someArr) {
+  for (i=0; i<someArr.length; i++) {
+    console.log(typeof(someArr[i]));
+  }
+}
+printType(arr);
   
 
