@@ -250,5 +250,16 @@ function printType (someArr) {
   }
 }
 printType(arr);
+
+let user = {
+  username: 'ironhacker',
+  password: '123iron345'
+};
+
+function getCredentials (obj) {
+  console.log(`Username is: ${obj.username} and the password is ${obj.password}`);
+}
+
+getCredentials (user);
   
 
