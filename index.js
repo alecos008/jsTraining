@@ -289,5 +289,9 @@ function checkProperty (obj) {
 }
 
 checkProperty(property);
-  
 
+// For Rover Mars Project
+// 1- Create a 10x10 grid
+// 2- Create Function to turn the rover
+// 3- Create a fuction to move forward
+// 4- Create a function to receive commands
