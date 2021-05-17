@@ -295,3 +295,91 @@ checkProperty(property);
 // 2- Create Function to turn the rover
 // 3- Create a fuction to move forward
 // 4- Create a function to receive commands
+
+// Rover object goes here:
+let rover = {
+  direction: 'N',
+  position: [{x: 0, y: 0}],
+  travelLog: []
+}
+// ======================
+function turnLeft(rover) {
+  if (rover.direction == "N") {
+    rover.direction = "W";
+  } else if (rover.direction == "W") {
+    rover.direction = "S";
+  } else if (rover.direction == "S") {
+    rover.direction = "E";
+  } else if (rover.direction == "E") {
+    rover.direction = "N";
+    console.log (rover.direction);
+  }
+}
+
+function turnRight(rover) {
+  if (rover.direction == "N") {
+    rover.direction = "E";
+  } else if (rover.direction == "E") {
+    rover.direction = "S";
+  } else if (rover.direction == "S") {
+    rover.direction = "W";
+  } else if (rover.direction == "W") {
+    rover.direction = "N";
+  }
+}
+
+function moveForward(rover) {
+  if (rover.direction == "N") {
+    rover.position.y--;
+    rover
+    console.log(rover.position);
+  } else if (rover.direction == "W") {
+    rover.position.x--;
+    console.log(rover.position);
+  } else if (rover.direction == "S") {
+    rover.position.y++;
+    console.log(rover.position);
+  } else if (rover.direction == "E") {
+    rover.direction.x++;
+    console.log(rover.position);
+  }
+}
+
+function command (rover, command) {
+  switch (command) {
+    case 'l':
+      turnLeft(rover);
+      console.log(`The rover is facing ${rover.direction} and is in the x: ${rover.position.x} and y: ${rover.position.y}`);
+      break;
+    case 'r':
+      turnRight(rover);
+      console.log(`The rover is facing ${rover.direction} and is in the x: ${rover.position.x} and y: ${rover.position.y}`);
+      break;
+    case 'f':
+      moveForward(rover)
+      console.log(`The rover is facing ${rover.direction} and is in the x: ${rover.position.x} and y: ${rover.position.y}`);
+      break;
+  }
+}
+
+function multipleCommands (rover, command) {
+  for (let i = 0; i < command.lenght; index++) {
+    switch (command) {
+      case 'l':
+        turnLeft(rover);
+      case 'r':
+        turnRight(rover);
+      case 'f':
+        moveForward(rover);
+    }
+  }
+  console.log(`The rover is facing ${rover.direction} and is in the x: ${rover.position.x} and y: ${rover.position.y}`);
+}
+
+function updateTravelLog () {
+   for(let i = 0; i < rover.length; i++){
+    rover[i].position = { x: rover[i].x, y: rover[i].y };
+    rover[i].travelLog.push(rover[i].position);
+   }
+}
+
