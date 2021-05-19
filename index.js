@@ -299,7 +299,7 @@ checkProperty(property);
 // Rover object goes here:
 let rover = {
   direction: 'N',
-  position: [{x: 0, y: 0}],
+  position: {x: 0, y: 0},
   travelLog: []
 }
 // ======================
@@ -312,9 +312,13 @@ function turnLeft(rover) {
     rover.direction = "E";
   } else if (rover.direction == "E") {
     rover.direction = "N";
-    console.log (rover.direction);
   }
+   console.log(`The rover is facing ${rover.direction} and is in x: ${rover.position.x}, y: ${rover.position.y}`);
 }
+turnLeft(rover);
+turnLeft(rover);
+turnLeft(rover);  //turLeft(rover) works!
+turnLeft(rover);
 
 function turnRight(rover) {
   if (rover.direction == "N") {
@@ -326,60 +330,54 @@ function turnRight(rover) {
   } else if (rover.direction == "W") {
     rover.direction = "N";
   }
+  console.log(`The rover is facing ${rover.direction} and is in x: ${rover.position.x}, y: ${rover.position.y}`);
 }
+turnRight(rover);
+turnRight(rover); //turnRight(rover) works!
+turnRight(rover);
+turnRight(rover);
 
 function moveForward(rover) {
   if (rover.direction == "N") {
-    rover.position.y--;
-    rover
-    console.log(rover.position);
+    rover.position.y--; 
   } else if (rover.direction == "W") {
     rover.position.x--;
-    console.log(rover.position);
   } else if (rover.direction == "S") {
     rover.position.y++;
-    console.log(rover.position);
   } else if (rover.direction == "E") {
-    rover.direction.x++;
-    console.log(rover.position);
+    rover.position.x++;
   }
+  console.log(`The rover is facing ${rover.direction} and is in x: ${rover.position.x}, y: ${rover.position.y}`);
+}
+
+turnRight (rover);
+turnRight (rover);
+moveForward(rover);  // moveForward (rover) works!
+moveForward(rover);
+moveForward(rover);
+
+function updateTravelLog (rover) {
+  rover.travelLog.push(`x: ${rover.position.x}, y: ${rover.position.y} `);
+  console.log(`Travel log: ${rover.travelLog}`);
 }
 
 function command (rover, command) {
-  switch (command) {
+  const commandArr = command.split("");
+  commandArr.forEach (command => {
+    switch (command) {
     case 'l':
       turnLeft(rover);
-      console.log(`The rover is facing ${rover.direction} and is in the x: ${rover.position.x} and y: ${rover.position.y}`);
       break;
     case 'r':
       turnRight(rover);
-      console.log(`The rover is facing ${rover.direction} and is in the x: ${rover.position.x} and y: ${rover.position.y}`);
       break;
     case 'f':
       moveForward(rover)
-      console.log(`The rover is facing ${rover.direction} and is in the x: ${rover.position.x} and y: ${rover.position.y}`);
       break;
   }
+    updateTravelLog(rover);
+  });
+   
 }
 
-function multipleCommands (rover, command) {
-  for (let i = 0; i < command.lenght; index++) {
-    switch (command) {
-      case 'l':
-        turnLeft(rover);
-      case 'r':
-        turnRight(rover);
-      case 'f':
-        moveForward(rover);
-    }
-  }
-  console.log(`The rover is facing ${rover.direction} and is in the x: ${rover.position.x} and y: ${rover.position.y}`);
-}
-
-function updateTravelLog () {
-   for(let i = 0; i < rover.length; i++){
-    rover[i].position = { x: rover[i].x, y: rover[i].y };
-    rover[i].travelLog.push(rover[i].position);
-   }
-}
-
+command (rover, 'rrflf');  //updates travelLog & accepts multiple commands
